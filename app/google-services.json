@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "463773745301",
+    "project_id": "medicine-viewer",
+    "storage_bucket": "medicine-viewer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463773745301:android:b62af9fedbd24133afdb9c",
+        "android_client_info": {
+          "package_name": "com.mendelin.medicineviewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463773745301-teg375qpgsj4nmigpmh0uhko6s3tbl1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk3eb4c4IeysiAJDdsSoh2c-cCLDAlD9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463773745301-teg375qpgsj4nmigpmh0uhko6s3tbl1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463773745301:android:2de96218f217eb4dafdb9c",
+        "android_client_info": {
+          "package_name": "com.mendelin.medicineviewer.developer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463773745301-teg375qpgsj4nmigpmh0uhko6s3tbl1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk3eb4c4IeysiAJDdsSoh2c-cCLDAlD9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463773745301-teg375qpgsj4nmigpmh0uhko6s3tbl1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
