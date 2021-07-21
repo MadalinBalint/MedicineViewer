@@ -11,7 +11,8 @@ plugins {
 ext {
     lifecycle_version = "2.3.1"
     retrofit_version = "2.9.0"
-    koin_version= "3.1.2"
+    koin_version = "3.1.2"
+    room_version = "2.3.0"
 }
 
 def versionPropsFile = rootProject.file("version.properties")
@@ -54,6 +55,12 @@ android {
 
         resConfigs "en", "ro"
 
+        /* REST API endpoints */
+        buildConfigField "String", "ENPOINT_MEDICINES", "\"/nomenclator/medicamente\""
+
+        /* REST API parameter names */
+        buildConfigField "String", "QUERY_PAGE", "\"page\""
+
         dexOptions {
             javaMaxHeapSize "4g"
         }
@@ -80,7 +87,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 
             /* Keep local server for DEBUG build type */
-            buildConfigField "String", "BASE_URL", "\"https://www.anm.ro/nomenclator/medicamente\""
+            buildConfigField "String", "BASE_URL", "\"https://www.anm.ro\""
             buildConfigField("boolean", "RELEASE", "false")
         }
 
@@ -92,7 +99,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 
             /* Keep production server for RELEASE build type */
-            buildConfigField "String", "BASE_URL", "\"https://www.anm.ro/nomenclator/medicamente\""
+            buildConfigField "String", "BASE_URL", "\"https://www.anm.ro\""
             buildConfigField("boolean", "RELEASE", "true")
         }
     }
@@ -165,6 +172,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
 
     /* Timber logging */
     implementation "com.jakewharton.timber:timber:4.7.1"
@@ -173,4 +181,12 @@ dependencies {
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
     implementation "io.insert-koin:koin-android-compat:$koin_version"
+
+    /* Jsoup - HTML parsing */
+    implementation "org.jsoup:jsoup:1.14.1"
+
+    /* Room database */
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava3:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }
