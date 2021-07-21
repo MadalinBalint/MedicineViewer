@@ -11,7 +11,8 @@ plugins {
 ext {
     lifecycle_version = "2.3.1"
     retrofit_version = "2.9.0"
-    koin_version= "3.1.2"
+    koin_version = "3.1.2"
+    room_version = "2.3.0"
 }
 
 def versionPropsFile = rootProject.file("version.properties")
@@ -183,4 +184,9 @@ dependencies {
 
     /* Jsoup - HTML parsing */
     implementation "org.jsoup:jsoup:1.14.1"
+
+    /* Room database */
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava3:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }
