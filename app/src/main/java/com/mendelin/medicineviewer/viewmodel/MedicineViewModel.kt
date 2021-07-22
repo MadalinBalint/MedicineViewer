@@ -1,5 +1,6 @@
 package com.mendelin.medicineviewer.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mendelin.medicineviewer.model.data.AnmdmInfo
@@ -18,6 +19,8 @@ class MedicineViewModel(private val service: Api, private val repo: MedicineRepo
 
     val pageInfo = MutableLiveData<AnmdmInfo>()
     val medicineData = MutableLiveData<List<AnmdmMedicine>>()
+
+    fun getLoadingObservable(): LiveData<Boolean> = isLoading
 
     fun fetchPageInfo() {
         isLoading.value = true

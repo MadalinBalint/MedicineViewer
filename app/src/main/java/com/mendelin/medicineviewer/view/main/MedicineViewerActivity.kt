@@ -1,16 +1,20 @@
 package com.mendelin.medicineviewer.view.main
 
 import android.os.Bundle
+import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.mendelin.medicineviewer.databinding.ActivityMedicineviewerBinding
 import com.mendelin.medicineviewer.viewmodel.MedicineViewModel
+import org.koin.android.compat.ScopeCompat.viewModel
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
 class MedicineViewerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMedicineviewerBinding
-    private val viewModel: MedicineViewModel by inject()
+    private val viewModel by viewModel<MedicineViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,27 +22,9 @@ class MedicineViewerActivity : AppCompatActivity() {
         binding = ActivityMedicineviewerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        populateUI()
-    }
-
-    private fun populateUI() {
-        viewModel.fetchPageInfo()
-        viewModel.fetchMedicinesByPage(1)
-
-        observeViewModel()
-    }
-
-    private fun observeViewModel() {
-        viewModel.pageInfo.observe(this, { pages ->
-            Timber.e("Pages = $pages")
-        })
-
-        viewModel.medicineData.observe(this, { list ->
-            if (list.isNotEmpty()) {
-                Timber.e("Medicine # = ${list.size}")
-
-                list.forEach(::println)
-            }
+        viewModel.getLoadingObservable().observe(this, { status ->
+            Timber.e("Status = $status")
+            binding.progressMain.visibility = if (status) View.VISIBLE else View.INVISIBLE
         })
     }
 }
