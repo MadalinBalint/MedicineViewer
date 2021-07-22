@@ -18,7 +18,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/ic_medicine_viewer_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MedicineViewer"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
         <uses-library
