@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medicine_nav"
+    app:startDestination="@id/medicineViewerFragment">
+
+    <fragment
+        android:id="@+id/medicineViewerFragment"
+        android:name="com.mendelin.medicineviewer.view.main.MedicineViewerFragment"
+        android:label="fragment_medicine_viewer"
+        tools:layout="@layout/fragment_medicine_viewer" />
+</navigation>
