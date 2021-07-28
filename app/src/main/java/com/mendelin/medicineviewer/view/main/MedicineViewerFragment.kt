@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mendelin.medicineviewer.databinding.FragmentMedicineViewerBinding
 import com.mendelin.medicineviewer.viewmodel.MedicineViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -14,6 +15,7 @@ class MedicineViewerFragment : Fragment() {
 
     private val viewModel by sharedViewModel<MedicineViewModel>()
     private var binding: FragmentMedicineViewerBinding? = null
+    private lateinit var drugAdapter: MedicineAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,14 +29,23 @@ class MedicineViewerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupUI()
         populateUI()
-
         observeViewModel()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    private fun setupUI() {
+        drugAdapter = MedicineAdapter()
+        binding?.recyclerResults?.apply {
+            adapter = drugAdapter
+            layoutManager = LinearLayoutManager(requireActivity())
+            isNestedScrollingEnabled = true
+        }
     }
 
     private fun populateUI() {
@@ -52,6 +63,7 @@ class MedicineViewerFragment : Fragment() {
                 Timber.e("Medicine # = ${list.size}")
 
                 list.forEach(::println)
+                drugAdapter.add(list)
             }
         })
     }

@@ -5,5 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".view.main.MedicineViewerFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        tools:listitem="@layout/fragment_medicine_data" />
 
 </FrameLayout>
