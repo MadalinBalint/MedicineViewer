@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Medicine Viewer</string>
+    <string name="commercial_name">Denumire comercială</string>
+    <string name="substance">DCI</string>
+</resources>

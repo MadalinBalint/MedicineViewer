@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Medicine Viewer</string>
+    <string name="commercial_name">Comercial name</string>
+    <string name="substance">Substance</string>
 </resources>

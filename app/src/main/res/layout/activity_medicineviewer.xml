@@ -15,11 +15,11 @@
             android:id="@+id/appbar"
             style="@style/AppBarStyle">
 
-            <androidx.appcompat.widget.Toolbar
+            <!--<androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 style="@style/ToolbarStyle">
 
-            </androidx.appcompat.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>-->
 
         </com.google.android.material.appbar.AppBarLayout>
 

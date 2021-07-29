@@ -10,4 +10,5 @@
         android:name="com.mendelin.medicineviewer.view.main.MedicineViewerFragment"
         android:label="fragment_medicine_viewer"
         tools:layout="@layout/fragment_medicine_viewer" />
+
 </navigation>
